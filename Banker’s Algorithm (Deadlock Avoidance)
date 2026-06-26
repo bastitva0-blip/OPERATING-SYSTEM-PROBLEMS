@@ -1,0 +1,37 @@
+def bankers_algorithm(available, max_matrix, allocation):
+    n_processes = len(allocation)
+    n_resources = len(available)
+    
+    # Calculate Need Matrix
+    need = [[max_matrix[i][j] - allocation[i][j] for j in range(n_resources)] for i in range(n_processes)]
+    
+    finish = [False] * n_processes
+    safe_sequence = []
+    work = list(available)
+    
+    while len(safe_sequence) < n_processes:
+        allocated_in_this_loop = False
+        for i in range(n_processes):
+            if not finish[i]:
+                # Check if need <= work
+                if all(need[i][j] <= work[j] for j in range(n_resources)):
+                    for j in range(n_resources):
+                        work[j] += allocation[i][j]
+                    finish[i] = True
+                    safe_sequence.append(f"P{i}")
+                    allocated_in_this_loop = True
+                    
+        if not allocated_in_this_loop:
+            print("System is in an UNSAFE state! Deadlock detected or possible.")
+            return False
+            
+    print("System is in a SAFE state.")
+    print("Safe Sequence:", " -> ".join(safe_sequence))
+    return True
+
+# Data Setup
+available_res = [3, 3, 2]
+alloc_matrix = [[0, 1, 0], [2, 0, 0], [3, 0, 2], [2, 1, 1], [0, 0, 2]]
+max_res_matrix = [[7, 5, 3], [3, 2, 2], [9, 0, 2], [2, 2, 2], [4, 3, 3]]
+
+bankers_algorithm(available_res, max_res_matrix, alloc_matrix)
