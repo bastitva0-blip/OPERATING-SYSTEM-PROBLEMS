@@ -1,3 +1,15 @@
 # Python-practice-repo-
 This repository contains basic Python practice questions i made during my study.
-1) basic calculator in python it showcases my basic knowledge in taking input from user and then perform if-elif-else for now
+BASIC MATHS:
+1) basic calculator 
+OPERATING SYSTEM:
+1. WAP to implement first come first serve (FCFS) CPU Scheduling Algorithms
+2. WAP to implement shortest job first (SJF) CPU Scheduling Algorithms 
+3. WAP to implement shortest remaining time First (SRTF) CPU Scheduling Algorithms
+4. WAP to implement PRIORITY CPU Scheduling Algorithms
+5. WAP to implement ROUND ROBIN Scheduling Algorithms
+6. WAP to implement BANKER'S Algorithms
+7. WAP to implement FIFO Page Replacement Algorithm
+8. WAP to implement LRU Page Replacement Algorithm
+9. WAP to implement OPTIMAL Page Replacement Algorithm
+10. Simulate Paging Technique of Memory Management.
